@@ -1,4 +1,5 @@
 "use client";
+import "@/styles/components/heading.scss"
 
 export default function Heading({ heading }) {
 
