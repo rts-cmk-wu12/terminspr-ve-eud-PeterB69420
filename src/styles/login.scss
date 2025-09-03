@@ -1,0 +1,15 @@
+@use "../variables";
+
+.login {
+    width: 411px;
+    height: 823px;
+    background-image: url(/background-image.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+}
