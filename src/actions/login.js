@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import * as z from "zod";
 
+
 export default async function LoginAction(formData) {
     const username = formData.get("username");
     const password = formData.get("password");
@@ -22,9 +23,9 @@ export default async function LoginAction(formData) {
 
     const response = await fetch("http://localhost:4000/auth/token", {
         method: "POST",
-        headers: { 
+        headers: {
             "Content-Type": "application/json"
-         },
+        },
         body: JSON.stringify(validated.data),
     });
 
@@ -34,18 +35,19 @@ export default async function LoginAction(formData) {
     };
 
     const data = await response.json();
-    const token = data.token || data.access_token;
-
-    if (!token) return {
-        success: false,
-        errors: ["Ingen token modtaget fra API"],
-    };
 
     const cookieStore = await cookies();
-    cookieStore.set("auth_token", token, {
+    const cookieOptions = {
         maxAge: 60 * 60,
-    });
+        httpOnly: true,
+        path: "/"
+    }
+    
 
-    redirect("/");
+    cookieStore.set("auth_token", data.token, cookieOptions);
+    cookieStore.set("user_id", data.userId.toString(), cookieOptions);
+    cookieStore.set("user_role", data.role, cookieOptions);
+
+    redirect("/activities");
 
 }
