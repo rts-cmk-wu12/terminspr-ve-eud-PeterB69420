@@ -4,6 +4,10 @@ import { cookies } from "next/headers";
 import "@/styles/searchpage.scss"
 import Footer from "@/components/ui/footer";
 
+export const metadata = {
+    title: "Søg",
+};
+
 export default async function Search() {
     const cookieStore = await cookies();
     const authToken = cookieStore.get("auth_token");

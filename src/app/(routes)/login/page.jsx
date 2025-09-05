@@ -1,7 +1,9 @@
-import LoginAction from "@/actions/login"
 import LoginForm from "@/components/ui/login-form"
 import "@/styles/login.scss"
 
+export const metadata = {
+    title: "Login",
+};
 
 export default async function LoginPage() {
 

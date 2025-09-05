@@ -4,6 +4,25 @@ import "@/styles/activitydetails.scss";
 import { cookies } from "next/headers";
 import JoinActivityButton from "@/components/ui/join-activity";
 
+export async function generateMetadata({ params }) {
+    const { activityId } = await params;
+
+    const cookieStore = await cookies();
+    const authToken = cookieStore.get("auth_token")?.value;
+
+    const response = await fetch(`http://localhost:4000/api/v1/activities/${activityId}`, {
+        headers: {
+            "Authorization": "Bearer " + authToken
+        },
+    });
+
+    const data = await response.json();
+
+    return {
+        title: data.name
+    }
+}
+
 export default async function ActivityDetailsPage({ params }) {
     const { activityId } = await params;
 
