@@ -36,9 +36,11 @@ export default async function LoginAction(formData) {
 
     const data = await response.json();
 
+    const remember = formData.get("remember")
+
     const cookieStore = await cookies();
     const cookieOptions = {
-        maxAge: 60 * 60,
+        maxAge: remember ? 60 * 60 * 24 * 30 : 60 * 60,
         httpOnly: true,
         path: "/"
     }

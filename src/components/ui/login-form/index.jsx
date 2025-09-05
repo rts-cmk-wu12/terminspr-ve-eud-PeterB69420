@@ -21,6 +21,13 @@ export default function LoginForm() {
                 name="password"
             />
             <button type="submit" className="login__button">Log ind</button>
+            <input 
+            type="checkbox"
+            className="login__checkbox"
+            name="remember"
+            id="remember"
+            />
+            <label className="login__remember-me" htmlFor="remember">Husk mig</label>
         </form>
     )
 }

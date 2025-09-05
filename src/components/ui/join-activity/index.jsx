@@ -6,13 +6,18 @@ export default function JoinActivityButton({ activityId, token, userId }) {
     const router = useRouter();
 
     async function joinActivity() {
+        if (!token) {
+            router.push("/login");
+            return;
+        }
         await fetch(`http://localhost:4000/api/v1/users/${userId}/activities/${activityId}`, {
             method: "POST",
             headers: {
                 "Authorization": "Bearer " + token
             }
         });
-        router.push(token ? "/calendar" : "/login");
+        
+        router.push("/calendar");
     }
 
     return (

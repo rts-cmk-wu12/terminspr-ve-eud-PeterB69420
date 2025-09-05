@@ -12,13 +12,20 @@
         height: 107px;
         padding: 1rem;
         background-color: variables.$white-color;
-        font-family: var(--font-roboto);
+        font-family: var(--font-ubuntu);
         border-radius: 10px;
         margin-bottom: 1rem;
     }
 
     &__name {
         font-size: 2rem;
+    }
+
+    &__no-activities-found {
+        font-family: var(--font-ubuntu);
+        text-align: center;
+        font-size: 1.5rem;
+        color: variables.$white-color;
     }
 
 }

@@ -1,10 +1,12 @@
-# Dokumentation for Landrup Dans
+# Dokumentation for Landrup Dans Applikation
 Peter Oliver Neumann Bransner, WU12
 
 ## Sådan kommer du i gang
 `npm install`
 
 `npm run dev`
+
+Jeg har lavet valgfri opgave C
 
 ## Tech-stack
 * **Next.js**
@@ -14,13 +16,18 @@ Next.js er et front-end framework baseret på React.js som også giver adgang ti
 React er et bibliotek der giver mig mulighed for at lave components og håndtere states på en let måde. React har et stort fællesskab og et stort modul-bibliotek, som er aktivt, vel-dokumenteret og vel-understøttet. Det er også det mest brugte front-end bibliotek i verden, så efterspørgslen på React-udviklere er stor.
 
 * **SASS**
-SASS er en mere avanceret og udviklet version af CSS kodesproget. SCSS giver en lov til at bruge variabler og nesting, det gør at ens kode overordnet set ser mere overskuelig og pænere ud. Jeg kan opdele min CSS og i modules og genbruge kode andre steder.
+SASS er en mere avanceret og udviklet version af CSS. SASS giver en lov til at bruge variabler og nesting, det gør at ens kode overordnet set ser mere overskuelig og pænere ud. Jeg kan opdele min CSS i modules og genbruge kode andre steder.
 
 * **React-icons**
 Er et bibliotek som giver adgang til SVG ikoner for react applikationer.
 
 * **Zod**
 Zod er et valideringsbibliotek til objekter og string. Jeg bruger Zod til bland andet at validere bruger-input i formularer.
+
+* **Landrup dans Web-API**
+Er et interface hvor man får adgang til danse aktiviteter.
+
+
 ## Kodeeksempel
 
 Search bar component (@/components/ui/search-bar)
@@ -61,7 +68,9 @@ export default function SearchBar({ activities }) {
                 </section>
             </section>
         </>
-    )
+    )   
 }
 ```
-Jeg kalder en react hook "useSate" hvilket er en funktion som retunerer et array. Arrayet har 2 elementer, et state og en sætter til dette state. Når brugeren skriver i mit input felt bliver 
+**Forklarking af kode:**
+
+Jeg bruger React hook’en useState til at gemme søgeordet query. Når brugeren skriver i inputfeltet, opdateres query. Herefter filtrerer jeg listen af aktiviteter, så kun dem der matcher søgeordet vises. Hvis ingen aktiviteter matcher, vises en besked om, at der ikke blev fundet nogen aktiviteter.
