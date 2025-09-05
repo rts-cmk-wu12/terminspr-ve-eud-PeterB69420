@@ -4,6 +4,10 @@ import Heading from "@/components/ui/heading";
 import { cookies } from "next/headers";
 import "@/styles/calendar.scss";
 
+export const metadata = {
+    title: "Kalender",
+};
+
 export default async function CalendarPage() {
     const cookieStore = await cookies();
 
