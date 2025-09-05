@@ -4,20 +4,17 @@ import Heading from "@/components/ui/heading";
 import { cookies } from "next/headers";
 import "@/styles/calendar.scss";
 
-export const metadata = {
-    title: "Kalender",
-};
-
 export default async function CalendarPage() {
     const cookieStore = await cookies();
 
     const authToken = cookieStore.get("auth_token")?.value;
     const userId = cookieStore.get("user_id")?.value;
     const role = cookieStore.get("user_role")?.value;
+    
 
     const response = await fetch(`http://localhost:4000/api/v1/users/${userId}`, {
         headers: {
-            "Authorization": `Bearer ${authToken}`
+            "Authorization": `Bearer ${authToken}`,
         },
     });
 
@@ -35,7 +32,7 @@ export default async function CalendarPage() {
                             <CalendarCard key={activity.id} activity={activity} role={role} />
                         ))
                     ) : (
-                        <p>Du er ikke tilmeldt nogen aktiviteter endnu.</p>
+                        <p className="calendar-page__no-activities-found">Du er ikke tilmeldt nogen aktiviteter.</p>
                     )}
             </section>
             <Footer />

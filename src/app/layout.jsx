@@ -1,6 +1,13 @@
 import "./globals.css";
 import { Roboto } from 'next/font/google'
 import { Racing_Sans_One } from 'next/font/google'
+import { Ubuntu } from "next/font/google";
+
+const ubuntu = Ubuntu({
+  subsets: ['latin'],
+  variable: '--font-ubuntu',
+  weight: "400"
+})
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -24,7 +31,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="da" className ={`${roboto.variable} ${racingsansone.variable}`}>
+    <html lang="da" className={`${roboto.variable} ${racingsansone.variable} ${ubuntu.variable}`}>
       <body>
         {children}
       </body>
