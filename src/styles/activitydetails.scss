@@ -1,0 +1,47 @@
+@use "../variables";
+
+.activities-details {
+    background-color: variables.$primary-color;
+    width: 411px;
+    height: 823px;
+    font-family: var(--font-roboto);
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: variables.$primary-color;
+        color: variables.$white-color;
+        border: none;
+        padding: 1rem 4rem;
+        font-size: 1rem;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &__info {
+        padding: 1rem;
+        color: variables.$white-color;
+    }
+
+    &__info-heading {
+        font-size: 1.5rem;
+    }
+
+    &__info-age {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__info-desc {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__info-weekday {
+        font-size: 1.5rem;
+        font-weight: bold;
+        
+    }
+
+}

@@ -1,0 +1,24 @@
+@use "../variables";
+
+.calendar-page {
+    width: 411px;
+    height: 823px;
+    background-color: variables.$primary-color;
+
+    &__box {
+        display: grid;
+        margin: 0 auto;
+        width: 356px;
+        height: 107px;
+        padding: 1rem;
+        background-color: variables.$white-color;
+        font-family: var(--font-roboto);
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    }
+
+    &__name {
+        font-size: 2rem;
+    }
+
+}

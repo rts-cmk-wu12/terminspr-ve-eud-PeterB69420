@@ -1,0 +1,43 @@
+@use "../variables";
+
+.login {
+    width: 411px;
+    height: 823px;
+    background-image: url(/background-image.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__heading {
+        font-family: var(--font-roboto);
+        font-size: 3rem;
+    }
+
+    &__input {
+        width: 332px;
+        outline: none;
+        border: none;
+        height: 50px;
+        padding: 1rem;
+    }
+
+    &__button {
+        display: grid;
+        margin: 0 auto;
+        align-items: center;
+        width: 249px;
+        height: 56px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        background-color: variables.$primary-color;
+        font-size: 1rem;
+        color: variables.$white-color;
+    }
+}

@@ -1,0 +1,9 @@
+@use "../variables";
+
+.search {
+    width: 411px;
+    height: 823px;
+    background-color: variables.$primary-color;
+    display: flex;
+    flex-direction: column;
+}

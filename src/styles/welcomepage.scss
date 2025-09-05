@@ -1,0 +1,48 @@
+@use "../variables";
+
+.welcome-section {
+    width: 411px;
+    height: 823px;
+    background-image: url(/background-image.png);
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    &__heading {
+        font-family: var(--font-roboto);
+        text-transform: uppercase;
+        font-size: 2.25rem;
+        line-height: 1;
+        letter-spacing: 2px;
+    }
+
+    &__paragraph {
+        font-family: var(--font-racing-sans-one);
+        text-transform: uppercase;
+        font-size: 4.5rem;
+        color: variables.$misc-color;
+    }
+
+    &__button-wrap {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 4rem;
+        font-family: var(--font-roboto);
+        background-color: variables.$primary-color;
+        color: variables.$white-color;
+        padding: 13 4rem;
+        border-radius: 0.625rem;
+    }
+
+
+}
